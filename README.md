@@ -2,7 +2,7 @@
 
 ## 基座地址
 ### management-frontend next 模板：
-https://github.com/Lemenxzy/next-webpack-5-module-federation
+https://github.com/Lemenxzy/next-webpack-5-module-federation/tree/main
 
 ## 运行
 
