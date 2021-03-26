@@ -1,0 +1,2 @@
+# trippal-management-frontend
+
