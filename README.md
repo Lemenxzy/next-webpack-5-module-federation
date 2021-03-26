@@ -6,7 +6,7 @@
 
 ## 子应用地址
 
-https://github.com/Lemenxzy/son-module-federation
+https://github.com/Lemenxzy/next-webpack-5-module-federation/tree/master
 
 ## run 
 ```bash
