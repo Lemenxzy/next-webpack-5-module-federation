@@ -53,8 +53,8 @@ const BaseLayOut = (props) => {
                         <Menu.Item key="title">
                             <Link to="/title">TITLE</Link>
                         </Menu.Item>
-                        <Menu.Item key="router">
-                            <Link to="/router">
+                        <Menu.Item key="routes">
+                            <Link to="/routes/a">
                                 ROOTER
                             </Link>
                         </Menu.Item>

@@ -1,6 +1,7 @@
 import RemoteComponent from '../component/RemoteComponent'
 import BaseLayOut from '../component/layout'
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import {Suspense} from "react";
 
 export default function Home(props) {
   const LinkHandle = (key, url) => {
@@ -15,7 +16,7 @@ export default function Home(props) {
                           scope: "hello",
                           module: './HelloCom',
                           url: 'http://127.0.0.1:3001/remoteEntry.js',
-                          shareModuleList: ['react', 'react-dom', 'antd']
+                          shareModuleList: ['react', 'react-dom']
                       }} />
                   </Route>
                   <Route path="/title" exact={true}>
@@ -26,8 +27,13 @@ export default function Home(props) {
                           shareModuleList: ['react', 'react-dom']
                       }} />
                   </Route>
-                  <Route path="/router" exact={true}>
-                      <h1>About</h1>
+                  <Route path="/routes">
+                      <RemoteComponent data={{
+                          scope: "router",
+                          module: './RoutersCom',
+                          url: 'http://127.0.0.1:3003/remoteEntry.js',
+                          shareModuleList: ['react', 'react-dom', 'react-router-dom']
+                      }} />
                   </Route>
 
               </Switch>

@@ -51,6 +51,7 @@ const System = ({ scope, module, url, shareModuleList}, ...props) => {
             }
         })
     }
+    console.log(jsOk);
     lastName.current = module
     if (!getGlobalModule(DsyncFlag)) {
         return <p>切换了路由</p>

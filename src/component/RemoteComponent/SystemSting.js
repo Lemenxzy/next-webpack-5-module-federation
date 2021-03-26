@@ -22,5 +22,10 @@ export const commonModule = {
         [dependencies["react-dom"]]: {
             get: () => Promise.resolve().then(() => () => require("react-dom")),
         }
+    },
+    'react-router-dom': {
+        [dependencies["react-router-dom"]]: {
+            get: () => Promise.resolve().then(() => () => require("react-router-dom")),
+        }
     }
 }
