@@ -8,11 +8,19 @@
 import {Fragment, lazy} from "react";
 const ACom = lazy(() => import('../view/a'));
 const BCom = lazy(() => import('../view/b'));
+const Com = lazy(() => import('../view/home'));
 import { Route } from 'react-router-dom';
 
 
 const routes = () => {
     return [
+        {
+            path: '/routes',
+            component: (props) => (
+                <Com {...props}/>
+            ),
+            exact: true,
+        },
         {
             path: '/routes/a',
             component: (props) => (

@@ -11,6 +11,8 @@ const ACom = () => {
     return <div>
         <p>aaaaaaaaaaaaa</p>
         <Link to='/routes/b'>跳转到B</Link>
+        ----------
+        <Link to='/routes'>跳转到首页</Link>
     </div>
 };
 export default ACom
