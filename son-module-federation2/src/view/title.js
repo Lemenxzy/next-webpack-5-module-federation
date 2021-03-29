@@ -6,7 +6,7 @@
  * @Last Modified by zhiyuan.xu
  * @Last Modified Time 2021/3/23
  */
-import style from './title.scss';
+import style from './title.module.scss';
 
 const TitleCom  = () => {
     return (

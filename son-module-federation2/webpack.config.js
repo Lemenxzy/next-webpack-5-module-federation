@@ -66,7 +66,8 @@ module.exports = (_, args) => {
           },
         },
         {
-          test: /\.css$/i,
+          test: /\.css$/,
+          exclude: /\.module\.css$/,
           use: [
             // Creates `style` nodes from JS strings
             'style-loader',
@@ -75,7 +76,48 @@ module.exports = (_, args) => {
           ],
         },
         {
-          test: /\.s[ac]ss$/i,
+          test: /\.module.css$/,
+          use: [
+            // Creates `style` nodes from JS strings
+            'style-loader',
+            // Translates CSS into CommonJS
+            {
+              loader: "css-loader",
+              options: {
+                modules: true,
+                importLoaders: 1,
+              },
+            },
+          ],
+        },
+        {
+          test: /\.s[ac]ss$/,
+          exclude: /\.module\.s[ac]ss$/,
+          use: [
+            // Creates `style` nodes from JS strings
+            'style-loader',
+            // Translates CSS into CommonJS
+            "css-loader",
+            {
+              loader: "postcss-loader",
+              options: {
+                postcssOptions: {
+                  plugins: [
+                    "postcss-import",
+                    "autoprefixer",
+                    require('postcss-preset-env')({
+                      browsers: 'last 2 versions',
+                    })
+                  ],
+                },
+              }
+            },
+            // Compiles Sass to CSS
+            'sass-loader',
+          ],
+        },
+        {
+          test: /\.module.s[ac]ss$/,
           use: [
             // Creates `style` nodes from JS strings
             'style-loader',
