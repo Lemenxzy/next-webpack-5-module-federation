@@ -46,18 +46,13 @@ const BaseLayOut = (props) => {
                         style={{ height: '100%' }}
                         onClick={handleClick}
                     >
-
-                        <Menu.Item key="hello">
-                            <Link to="/">首页</Link>
-                        </Menu.Item>
-                        <Menu.Item key="title">
-                            <Link to="/title">TITLE</Link>
-                        </Menu.Item>
-                        <Menu.Item key="routes">
-                            <Link to="/routes/a">
-                                ROOTER
-                            </Link>
-                        </Menu.Item>
+                        {
+                            props.linkData.map((item) => {
+                                return <Menu.Item key={item.scope}>
+                                    <Link to= { item.path } > {item.name } </Link>
+                                </Menu.Item>
+                            })
+                        }
 
                         <SubMenu key="sub3" icon={<NotificationOutlined />} title="subnav3">
                             <Menu.Item key="9">option9</Menu.Item>
