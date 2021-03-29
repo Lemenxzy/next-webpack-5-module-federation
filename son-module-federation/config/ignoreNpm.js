@@ -20,5 +20,10 @@ module.exports = (isDev ) => {
             requiredVersion: dependencies["react"],
             singleton: true,
         },
+        antd: {
+            eager: isDev,
+            requiredVersion: dependencies["antd"],
+            singleton: true,
+        }
     }
 }
