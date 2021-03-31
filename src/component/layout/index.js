@@ -47,9 +47,9 @@ const BaseLayOut = (props) => {
                         onClick={handleClick}
                     >
                         {
-                            props.linkData.map((item) => {
-                                return <Menu.Item key={item.scope}>
-                                    <Link to= { item.path } > {item.name } </Link>
+                            props.listData.map((item) => {
+                                return <Menu.Item key={ item.scope }>
+                                    <Link to={ item.path }> { item.name } </Link>
                                 </Menu.Item>
                             })
                         }

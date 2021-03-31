@@ -27,6 +27,7 @@ const System = ({ scope, module, url, shareModuleList}, ...props) => {
 
     // 切换了路由
     if (module !== lastName.current) {
+        console.log('-----', url, scope);
         useDynamicScript(url, scope).then(({ready}) => {
             if (ready) {
                 // 初始化值

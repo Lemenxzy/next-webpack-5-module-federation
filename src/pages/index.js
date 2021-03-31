@@ -5,7 +5,37 @@ import { useState } from "react";
 
 export default function Home(props) {
   const LinkHandle = (key, url) => {
-  }
+  };
+
+  const [listData, setListData] = useState([
+      {
+          scope: "hello",
+          module: './HelloCom',
+          url: 'http://127.0.0.1:3001/remoteEntry.js',
+          shareModuleList: ['react', 'react-dom'],
+          exact: true,
+          path: '/',
+          name: '首页'
+      },
+      {
+          scope: "title",
+          module: './TitleCom',
+          url: 'http://127.0.0.1:3002/remoteEntry.js',
+          shareModuleList: ['react', 'react-dom'],
+          exact: true,
+          path: '/title',
+          name: 'TITLE'
+      },
+      {
+          scope: "router",
+          module: './RoutersCom',
+          url: 'http://127.0.0.1:3003/remoteEntry.js',
+          shareModuleList: ['react', 'react-dom', 'react-router-dom'],
+          exact: false,
+          path: '/routes',
+          name: 'ROUTER'
+      }
+  ]);
 
   const [linkData, setLinkData] = useState([
       {
@@ -39,11 +69,11 @@ export default function Home(props) {
 
   return (
       <Router>
-          <BaseLayOut linkData={linkData} LinkHandle={LinkHandle}>
+          <BaseLayOut listData={listData} LinkHandle={LinkHandle}>
               <Switch>
                   {
-                      linkData.map((item) => {
-                          return <Route path={item.path} key={item.scope} exact={item.exact}>
+                      listData.map((item) => {
+                          return  <Route key={item.scope} path={ item.path } exact={ item.exact }>
                               <RemoteComponent data={{
                                   scope: item.scope,
                                   module: item.module,
